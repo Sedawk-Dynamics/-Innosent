@@ -214,6 +214,483 @@ const products = [
     },
     color: 'from-red-500 to-pink-500',
   },
+
+
+
+
+{
+  id: 'imd-2002',
+  name: 'IMD-2002',
+  category: 'Industrial Motion Detector',
+  badge: 'Industrial',
+  tagline: 'Reliable Motion Detection for Industrial Automation',
+  description:
+    'Industrial radar motion detector designed for automation systems and industrial monitoring. Provides reliable object movement detection in harsh environments.',
+  image: '/products/csm_IMD-2002_web_f92ec6e49f.png',
+  features: [
+    '24 GHz industrial radar sensor',
+    'Reliable motion detection',
+    'Robust industrial housing',
+    'Low power consumption',
+    'Easy system integration',
+    'Continuous monitoring capability',
+  ],
+  applications: [
+    'Industrial automation',
+    'Machine monitoring',
+    'Motion detection',
+    'Safety systems',
+    'Process monitoring',
+  ],
+  specs: {
+    Frequency: '24 GHz',
+    Detection: 'Motion detection',
+    Interface: 'Digital output',
+    Temperature: '-40°C to +85°C',
+    Protection: 'Industrial grade',
+  },
+  color: 'from-yellow-500 to-orange-500',
+},
+
+{
+  id: 'imd-3000',
+  name: 'IMD-3000',
+  category: 'Industrial Radar',
+  badge: 'Industrial',
+  tagline: 'Advanced Radar for Industrial Monitoring',
+  description:
+    'Industrial radar sensor designed for monitoring and detection applications in automated systems.',
+  image: '/products/csm_IMD-3000_242246e754.png',
+  features: [
+    'High reliability radar sensing',
+    'Industrial grade construction',
+    'Continuous monitoring',
+    'Compact design',
+  ],
+  applications: [
+    'Industrial monitoring',
+    'Factory automation',
+    'Machine safety',
+  ],
+  specs: {
+    Frequency: '24 GHz',
+    Detection: 'Motion sensing',
+    Temperature: '-40°C to +85°C',
+  },
+  color: 'from-amber-500 to-yellow-600',
+},
+
+{
+  id: 'ips-280',
+  name: 'IPS-280',
+  category: 'Industrial Presence Sensor',
+  badge: 'Smart Sensor',
+  tagline: 'Presence Detection Radar for Smart Systems',
+  description:
+    'Advanced radar-based presence detection sensor designed for automation and smart monitoring systems.',
+  image: '/products/csm_IPS-280_8df722630b.png',
+  features: [
+    'Presence detection radar',
+    'Reliable detection accuracy',
+    'Low power consumption',
+    'Compact integration',
+  ],
+  applications: [
+    'Smart lighting systems',
+    'Presence monitoring',
+    'Automation systems',
+  ],
+  specs: {
+    Frequency: '24 GHz',
+    Detection: 'Presence detection',
+    Range: 'Up to 30m',
+  },
+  color: 'from-green-500 to-teal-500',
+},
+
+{
+  id: 'ips-354',
+  name: 'IPS-354',
+  category: 'Industrial Radar Sensor',
+  badge: 'Advanced',
+  tagline: 'High Performance Radar Presence Sensor',
+  description:
+    'Industrial radar presence sensor for smart automation and safety systems.',
+  image: '/products/csm_IPS-354_c11d2b31d3.png',
+  features: [
+    'Radar presence sensing',
+    'Stable detection performance',
+    'Industrial reliability',
+  ],
+  applications: [
+    'Automation',
+    'Presence monitoring',
+    'Security detection',
+  ],
+  specs: {
+    Frequency: '24 GHz',
+    Range: 'Up to 40m',
+    Temperature: '-40°C to +85°C',
+  },
+  color: 'from-emerald-500 to-green-600',
+},
+
+{
+  id: 'ips-355',
+  name: 'IPS-355',
+  category: 'Industrial Radar Sensor',
+  badge: 'Professional',
+  tagline: 'Reliable Radar Sensor for Industrial Monitoring',
+  description:
+    'Radar based industrial sensor providing reliable detection for automated environments.',
+  image: '/products/csm_IPS-355_ca9f7d5e71.png',
+  features: [
+    'Industrial radar sensor',
+    'Reliable object detection',
+    'Compact radar module',
+  ],
+  applications: [
+    'Industrial monitoring',
+    'Automation',
+    'Safety detection',
+  ],
+  specs: {
+    Frequency: '24 GHz',
+    Range: 'Up to 50m',
+  },
+  color: 'from-blue-500 to-indigo-500',
+},
+
+{
+  id: 'isys-4004',
+  name: 'ISYS-4004',
+  category: 'Motion Detection',
+  badge: 'Industrial',
+  tagline: 'Industrial Motion Radar System',
+  description:
+    'Industrial radar motion detection system designed for monitoring and safety applications.',
+  image: '/products/csm_iSYS-4004_2716ef8261.png',
+  features: [
+    '24 GHz radar motion sensor',
+    'High reliability detection',
+    'Industrial grade design',
+  ],
+  applications: [
+    'Traffic monitoring',
+    'Industrial automation',
+    'Security systems',
+  ],
+  specs: {
+    Frequency: '24 GHz',
+    Detection: 'Motion detection',
+  },
+  color: 'from-cyan-500 to-blue-600',
+},
+
+{
+  id: 'isys-5010',
+  name: 'ISYS-5010',
+  category: '3D Radar Sensor',
+  badge: 'Advanced',
+  tagline: '3D Radar Sensor for Detection and Monitoring',
+  description:
+    'Advanced radar sensor capable of capturing motion and positional data for monitoring applications.',
+  image: '/products/csm_iSYS-5010_39b48586b0.png',
+  features: [
+    '3D radar sensing',
+    'High detection accuracy',
+    'Smart radar tracking',
+  ],
+  applications: [
+    'Area monitoring',
+    'Security detection',
+    'Automation',
+  ],
+  specs: {
+    Frequency: '24 GHz',
+    Range: 'Up to 120m',
+  },
+  color: 'from-indigo-500 to-purple-600',
+},
+
+
+
+
+
+
+
+
+{
+  id: 'ips-937',
+  name: 'IPS-937',
+  category: 'Industrial Presence Sensor',
+  badge: 'Advanced',
+  tagline: 'High Precision Presence Detection Radar',
+  description:
+    'Industrial radar presence sensor designed for smart automation and safety monitoring systems.',
+  image: '/products/csm_IPS-937_042fa6f768.png',
+  features: [
+    'Radar presence detection',
+    'High reliability sensing',
+    'Compact radar module',
+    'Industrial integration ready'
+  ],
+  applications: [
+    'Industrial automation',
+    'Smart presence monitoring',
+    'Security detection',
+    'Machine safety'
+  ],
+  specs: {
+    Frequency: '24 GHz',
+    Detection: 'Presence detection',
+    Range: 'Up to 40m',
+    Temperature: '-40°C to +85°C'
+  },
+  color: 'from-teal-500 to-green-600'
+},
+
+{
+  id: 'isys-6030',
+  name: 'ISYS-6030',
+  category: '3D Radar Sensor',
+  badge: 'Professional',
+  tagline: 'Advanced Radar Sensor for Object Detection',
+  description:
+    'High-performance radar sensor designed for precise motion and object detection in industrial environments.',
+  image: '/products/csm_iSYS-6030_4e1225843b.png',
+  features: [
+    '3D radar sensing technology',
+    'High accuracy motion detection',
+    'Robust industrial design'
+  ],
+  applications: [
+    'Area surveillance',
+    'Industrial monitoring',
+    'Movement detection'
+  ],
+  specs: {
+    Frequency: '24 GHz',
+    Range: 'Up to 120m',
+    Temperature: '-40°C to +85°C'
+  },
+  color: 'from-indigo-500 to-blue-600'
+},
+
+{
+  id: 'ivs-282',
+  name: 'IVS-282',
+  category: 'Industrial Vehicle Sensor',
+  badge: 'Traffic',
+  tagline: 'Radar Sensor for Vehicle Detection',
+  description:
+    'Reliable radar sensor designed for vehicle detection and traffic monitoring applications.',
+  image: '/products/csm_IVS-282_744a373151.png',
+  features: [
+    'Vehicle detection radar',
+    'Reliable detection accuracy',
+    'All-weather operation'
+  ],
+  applications: [
+    'Traffic monitoring',
+    'Vehicle detection',
+    'Smart transport systems'
+  ],
+  specs: {
+    Frequency: '24 GHz',
+    Range: 'Up to 100m',
+    Temperature: '-40°C to +80°C'
+  },
+  color: 'from-orange-500 to-red-500'
+},
+
+{
+  id: 'ivs-362',
+  name: 'IVS-362',
+  category: 'Industrial Radar Sensor',
+  badge: 'Smart Sensor',
+  tagline: 'Reliable Radar Detection System',
+  description:
+    'Industrial radar detection system for monitoring motion and presence in automated environments.',
+  image: '/products/csm_IVS-362_8b392a0008.png',
+  features: [
+    'Radar detection system',
+    'Industrial grade reliability',
+    'Compact sensor design'
+  ],
+  applications: [
+    'Industrial monitoring',
+    'Safety detection',
+    'Automation systems'
+  ],
+  specs: {
+    Frequency: '24 GHz',
+    Range: 'Up to 80m'
+  },
+  color: 'from-blue-500 to-cyan-500'
+},
+
+{
+  id: 'ivs-947',
+  name: 'IVS-947',
+  category: 'Industrial Radar Sensor',
+  badge: 'Advanced',
+  tagline: 'Smart Radar Sensor for Monitoring Systems',
+  description:
+    'Advanced radar sensor providing precise monitoring capabilities for industrial applications.',
+  image: '/products/csm_IVS-947_8688d1b238.png',
+  features: [
+    'High precision radar sensing',
+    'Industrial grade durability',
+    'Reliable object detection'
+  ],
+  applications: [
+    'Industrial automation',
+    'Monitoring systems',
+    'Security detection'
+  ],
+  specs: {
+    Frequency: '24 GHz',
+    Range: 'Up to 100m'
+  },
+  color: 'from-purple-500 to-indigo-600'
+},
+
+{
+  id: 'ivs-979',
+  name: 'IVS-979',
+  category: 'Industrial Radar Sensor',
+  badge: 'Industrial',
+  tagline: 'Advanced Radar Monitoring Sensor',
+  description:
+    'High-performance radar monitoring sensor for industrial and automation applications.',
+  image: '/products/csm_IVS-979_5b2396fc46.png',
+  features: [
+    'Industrial radar sensing',
+    'High detection accuracy',
+    'Robust industrial housing'
+  ],
+  applications: [
+    'Industrial automation',
+    'Monitoring systems',
+    'Security detection'
+  ],
+  specs: {
+    Frequency: '24 GHz',
+    Range: 'Up to 120m'
+  },
+  color: 'from-green-500 to-emerald-600'
+},
+
+{
+  id: 'smr-313',
+  name: 'SMR-313/314',
+  category: 'Short Range Radar',
+  badge: 'Compact',
+  tagline: 'Compact Radar Sensor for Short Range Detection',
+  description:
+    'Compact short-range radar sensor designed for object detection and monitoring applications.',
+  image: '/products/csm_SMR-313_314_169ee7f9b5.png',
+  features: [
+    'Short-range radar detection',
+    'Compact design',
+    'High reliability sensing'
+  ],
+  applications: [
+    'Short-range detection',
+    'Automation systems',
+    'Industrial safety'
+  ],
+  specs: {
+    Frequency: '24 GHz',
+    Range: 'Up to 30m'
+  },
+  color: 'from-pink-500 to-red-500'
+},
+
+{
+  id: 'smr-333',
+  name: 'SMR-333/334',
+  category: 'Short Range Radar',
+  badge: 'Smart Sensor',
+  tagline: 'Short Range Radar Detection System',
+  description:
+    'Advanced radar sensor designed for precise short-range object detection.',
+  image: '/products/csm_SMR-333_334_b070a29ae2.png',
+  features: [
+    'Compact radar detection',
+    'Reliable short-range sensing',
+    'Industrial integration'
+  ],
+  applications: [
+    'Automation systems',
+    'Industrial detection',
+    'Safety monitoring'
+  ],
+  specs: {
+    Frequency: '24 GHz',
+    Range: 'Up to 40m'
+  },
+  color: 'from-yellow-500 to-orange-600'
+},
+
+{
+  id: 'smr-343',
+  name: 'SMR-343',
+  category: 'Short Range Radar',
+  badge: 'Advanced',
+  tagline: 'Precision Radar Sensor for Industrial Monitoring',
+  description:
+    'Precision radar sensor designed for monitoring and detection in automation systems.',
+  image: '/products/csm_SMR-343_ohneSpiegelung_ex_01_8ca52eec4f.png',
+  features: [
+    'High precision radar sensing',
+    'Compact industrial design',
+    'Reliable object detection'
+  ],
+  applications: [
+    'Industrial automation',
+    'Presence detection',
+    'Monitoring systems'
+  ],
+  specs: {
+    Frequency: '24 GHz',
+    Range: 'Up to 50m'
+  },
+  color: 'from-rose-500 to-pink-600'
+},
+
+{
+  id: 'imd-1100',
+  name: 'IMD-1100',
+  category: 'Industrial Motion Detector',
+  badge: 'Industrial',
+  tagline: 'Compact Motion Detection Radar Sensor',
+  description:
+    'Industrial radar motion detector designed for automation and smart monitoring systems.',
+  image: '/products/csm_Web-IMD-1100_370643b05b.png',
+  features: [
+    'Radar motion detection',
+    'Compact sensor design',
+    'Reliable industrial sensing'
+  ],
+  applications: [
+    'Industrial automation',
+    'Motion detection',
+    'Safety monitoring'
+  ],
+  specs: {
+    Frequency: '24 GHz',
+    Range: 'Up to 60m',
+    Temperature: '-40°C to +85°C'
+  },
+  color: 'from-gray-500 to-slate-700'
+}
+
+
+
+
+
 ]
 
 export function ProductShowcase() {
