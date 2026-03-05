@@ -1,125 +1,105 @@
 'use client'
 
 import { Card } from '@/components/ui/card'
-import { Check, X } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { Download, FileText } from 'lucide-react'
 
-const products = [
-  { 
-    name: 'ITR-3811', 
+const datasheets = [
+  {
+    name: 'ITR-3811',
     category: 'Traffic Radar',
-    frequency: '24 GHz',
-    range: '276m', 
-    speed: '±233 km/h',
-    accuracy: '±0.23 km/h',
-    temp: '-40 to +80°C',
-    ip: 'IP67'
+    file: '/doc/ITR-3811_Data-Sheet.pdf',
   },
-  { 
-    name: 'ISYS-4001/4002', 
+  {
+    name: 'ITR-3810',
+    category: 'Traffic Radar',
+    file: '/doc/ITR-3810.pdf',
+  },
+  {
+    name: 'ISYS-4001 / ISYS-4002',
     category: 'K-Band Motion Detector',
-    frequency: '24 GHz',
-    range: '150m', 
-    speed: '±250 km/h',
-    accuracy: '±0.8 km/h',
-    temp: '-25 to +60°C',
-    ip: 'IP67'
+    file: '/doc/iSYS-4001-iSYS_4002.pdf',
   },
-  { 
-    name: 'ITR-3810', 
-    category: 'Traffic Radar',
-    frequency: '24 GHz',
-    range: '300m', 
-    speed: '±233 km/h',
-    accuracy: '±0.23 km/h',
-    temp: '-40 to +80°C',
-    ip: 'IP67'
+  {
+    name: 'ISYS-4010',
+    category: 'K-Band Motion Detector',
+    file: '/doc/DataSheet_iSYS-4010.pdf',
   },
-  { 
-    name: 'IDR-2050', 
-    category: '60 GHz Distance Sensor',
-    frequency: '60 GHz',
-    range: '10m', 
-    accuracy: '±5mm',
-    speed: 'N/A',
-    temp: '-40 to +85°C',
-    ip: 'IP67'
-  },
-  { 
-    name: 'ISYS-5021', 
+  {
+    name: 'ISYS-5021',
     category: '3D MIMO Radar',
-    frequency: '24 GHz',
-    range: '150m', 
-    speed: '±34.9 km/h',
-    accuracy: 'High',
-    temp: '-40 to +70°C',
-    ip: 'IP67'
+    file: '/doc/DataSheet_iSYS_5021.pdf',
   },
-  { 
-    name: 'ISYS-4010', 
-    category: 'K-Band Motion Detector',
-    frequency: '24 GHz',
-    range: '150m', 
-    speed: '±250 km/h',
-    accuracy: '±0.8 km/h',
-    temp: '-25 to +60°C',
-    ip: 'IP67'
+  {
+    name: 'IDR-2050',
+    category: '60 GHz Distance Sensor',
+    file: '/doc/IDR-2050 datasheet.pdf',
   },
-]
-
-const categories = [
-  { key: 'name', label: 'Product', type: 'text' },
-  { key: 'category', label: 'Category', type: 'text' },
-  { key: 'frequency', label: 'Frequency', type: 'text' },
-  { key: 'range', label: 'Detection Range', type: 'text' },
-  { key: 'speed', label: 'Speed Range', type: 'text' },
-  { key: 'accuracy', label: 'Accuracy', type: 'text' },
-  { key: 'temp', label: 'Temperature', type: 'text' },
-  { key: 'ip', label: 'IP Rating', type: 'text' },
 ]
 
 export function ProductComparison() {
   return (
     <section className="py-20 md:py-32 bg-gradient-to-b from-background to-muted/20">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
+        
         {/* Header */}
-        <div className="text-center space-y-4 mb-20 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary leading-tight">
-            Product Comparison
+        <div className="text-center space-y-4 mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary">
+            Product Datasheets
           </h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-            Compare specifications across our complete product range
+            Download detailed technical datasheets for our radar products
           </p>
         </div>
 
-        {/* Comparison Table */}
-        <div className="overflow-x-auto animate-fade-in-up">
-          <Card className="p-6 border-border/50">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b border-border">
-                  {categories.map((cat) => (
-                    <th key={cat.key} className="text-left py-4 px-4 font-bold text-foreground/70 text-sm">
-                      {cat.label}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {products.map((product, idx) => (
-                  <tr key={idx} className="border-b border-border/30 hover:bg-primary/5 transition-smooth">
-                    {categories.map((cat) => (
-                      <td key={`${idx}-${cat.key}`} className="py-4 px-4 text-sm">
-                        <span className={cat.key === 'name' ? 'font-bold text-primary' : 'text-foreground/80'}>
-                          {product[cat.key as keyof typeof product] as string}
-                        </span>
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </Card>
+        {/* Datasheet Cards */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {datasheets.map((item, index) => (
+            <Card
+              key={index}
+              className="p-6 border-border/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+            >
+              <div className="flex flex-col h-full justify-between space-y-6">
+
+                {/* Product Info */}
+                <div className="space-y-3">
+
+                  <div className="flex items-center gap-2 text-primary">
+                    <FileText size={20} />
+                    <span className="text-sm font-medium">
+                      Datasheet
+                    </span>
+                  </div>
+
+                  <h3 className="text-xl font-bold text-primary">
+                    {item.name}
+                  </h3>
+
+                  <p className="text-sm text-foreground/70">
+                    {item.category}
+                  </p>
+
+                </div>
+
+                {/* Download Button */}
+                <a
+                  href={item.file}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                  className="w-full"
+                >
+                  <Button className="w-full gap-2">
+                    <Download size={18} />
+                    Download PDF
+                  </Button>
+                </a>
+
+              </div>
+            </Card>
+          ))}
         </div>
+
       </div>
     </section>
   )

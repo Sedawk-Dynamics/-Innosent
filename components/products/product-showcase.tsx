@@ -6,6 +6,8 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Check, ChevronRight } from 'lucide-react'
 import { useState } from 'react'
+import { InquiryModal } from '@/components/inquiry-modal'
+
 
 const products = [
   {
@@ -216,8 +218,9 @@ const products = [
 
 export function ProductShowcase() {
   const [selectedProduct, setSelectedProduct] = useState(products[0])
-
+  const [isInquiryOpen, setIsInquiryOpen] = useState(false)
   return (
+    <>
     <section className="py-20 md:py-32 bg-background">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         {/* Header */}
@@ -333,22 +336,42 @@ export function ProductShowcase() {
                 {/* CTA Buttons */}
                 <div className="flex gap-4 pt-4">
                   <Button
-                    onClick={() => {
-                      // Trigger the inquiry modal
-                      const event = new CustomEvent('openInquiry')
-                      document.dispatchEvent(event)
-                    }}
+                    // onClick={() => {
+                    //   // Trigger the inquiry modal
+                    //   const event = new CustomEvent('openInquiry')
+                    //   document.dispatchEvent(event)
+                    // }}
+                    onClick={() => setIsInquiryOpen(true)}
                     className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2 flex-1 shadow-lg hover:shadow-xl transition-smooth"
                   >
                     Request Demo
                     <ChevronRight size={18} />
                   </Button>
+                     
+
+
+            
+
+
+
+
                 </div>
               </div>
             </Card>
           </div>
         </div>
       </div>
+
+      
     </section>
+
+     <InquiryModal
+      isOpen={isInquiryOpen}
+      onClose={() => setIsInquiryOpen(false)}
+      product={selectedProduct.name}
+    />
+    </>
+
+    
   )
 }

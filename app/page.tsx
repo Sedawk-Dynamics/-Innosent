@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { Header } from '@/components/header'
+import { CertificationsSection } from "@/components/certifications-section"
 import { Hero } from '@/components/hero'
 import { ProductCarousel } from '@/components/product-carousel'
 import { RadarTechIntro } from '@/components/radar-tech-intro'
@@ -48,8 +49,8 @@ export default function Home() {
 
       {/* Our Products */}
       <FeaturedProducts onInquiry={() => setIsInquiryOpen(true)} />
-      {/* <Products /> */}
-
+      <CertificationsSection/>
+      
       {/* Companies We Serve */}
       <Industries />
       {/* Trusted Clients */}
