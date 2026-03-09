@@ -22,7 +22,7 @@ const products = [
       '4D MIMO FMCW Radar (24 GHz ISM Band)',
       'Speed measurement up to 230 km/h',
       'Vehicle detection up to 276m',
-      'Vehicle classification up to 150m (4 classes)',
+      'Vehicle classification up tov 150m (4 classes)',
       '8-lane highway coverage',
       'OIML R91 compliant for speed enforcement',
     ],
