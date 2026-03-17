@@ -220,7 +220,7 @@ export function FeaturedProducts({ onInquiry }: FeaturedProductsProps) {
     </Badge>
 
   </div>
-
+  
 </div>
 
       </div>
