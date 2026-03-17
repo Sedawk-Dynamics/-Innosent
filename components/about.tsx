@@ -9,7 +9,7 @@ import { useScrollTriggerAnimation, useStaggerAnimation } from '@/hooks/use-gsap
 export function About() {
   const sectionRef = useScrollAnimation()
   const imageRef = useScrollTriggerAnimation({
-  animation: { x: window.innerWidth > 768 ? -50 : 0, opacity: 1, duration: 1 },
+  animation: { x: typeof window !== "undefined" && window.innerWidth > 768 ? -50 : 0, opacity: 1, duration: 1 },
 })
   const contentRef = useRef(null)
   const featuresRef = useRef(null)

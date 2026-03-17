@@ -28,8 +28,12 @@ const technologies = [
 
 export function Technology() {
   const sectionRef = useScrollAnimation()
-  const imageRef = useScrollTriggerAnimation({
-  animation: { x: window.innerWidth > 768 ? -50 : 0, opacity: 1, duration: 1 },
+const imageRef = useScrollTriggerAnimation({
+  animation: {
+    x: typeof window !== "undefined" && window.innerWidth > 768 ? -50 : 0,
+    opacity: 1,
+    duration: 1,
+  },
 })
   const cardsRef = useRef(null)
   const featuresRef = useRef(null)
