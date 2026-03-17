@@ -29,8 +29,8 @@ const technologies = [
 export function Technology() {
   const sectionRef = useScrollAnimation()
   const imageRef = useScrollTriggerAnimation({
-    animation: { x: -50, opacity: 1, duration: 1 },
-  })
+  animation: { x: window.innerWidth > 768 ? -50 : 0, opacity: 1, duration: 1 },
+})
   const cardsRef = useRef(null)
   const featuresRef = useRef(null)
 
@@ -43,7 +43,10 @@ export function Technology() {
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
           {/* Image */}
-          <div ref={imageRef} className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-xl hover-lift order-2 lg:order-1 mx-4 sm:mx-6 md:mx-0 ml-20">
+          <div
+  ref={imageRef}
+  className="relative h-80 sm:h-96 md:h-[500px] w-full max-w-[520px] mx-auto lg:mx-0 rounded-2xl overflow-hidden shadow-xl hover-lift order-2 lg:order-1"
+>
             <Image
               src="/3.jpg"
               alt="Advanced radar sensor technology stack"

@@ -9,8 +9,8 @@ import { useScrollTriggerAnimation, useStaggerAnimation } from '@/hooks/use-gsap
 export function About() {
   const sectionRef = useScrollAnimation()
   const imageRef = useScrollTriggerAnimation({
-    animation: { x: -50, opacity: 1, duration: 1 },
-  })
+  animation: { x: window.innerWidth > 768 ? -50 : 0, opacity: 1, duration: 1 },
+})
   const contentRef = useRef(null)
   const featuresRef = useRef(null)
   useStaggerAnimation(featuresRef, '.feature-item')
@@ -36,9 +36,9 @@ export function About() {
 
           {/* Image */}
           <div
-            ref={imageRef}
-            className="relative h-80 sm:h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-xl hover-lift order-2 lg:order-1 mx-4 sm:mx-6 md:mx-0 ml-20"
-          >
+  ref={imageRef}
+  className="relative h-80 sm:h-96 md:h-[500px] w-full max-w-[520px] mx-auto rounded-2xl overflow-hidden shadow-xl hover-lift order-2 lg:order-1"
+>
             <Image
               src="/1.webp"
               alt="Precision radar sensor technology"

@@ -74,7 +74,7 @@ export function ProductCarousel() {
   return (
 
 
-    <section className="relative w-full min-h-[500px] md:min-h-[85vh] flex items-center overflow-hidden bg-gradient-to-r from-yellow-100 via-amber-100 to-yellow-200">
+    <section className="relative w-full h-[620px] md:h-[85vh] flex items-center overflow-hidden bg-gradient-to-r from-yellow-100 via-amber-100 to-yellow-200">
 
       {/* ===== Circular Dotted Background ===== */}
       <div className="absolute inset-0 pointer-events-none">
@@ -133,17 +133,15 @@ export function ProductCarousel() {
         </div>
 
         {/* RIGHT SIDE IMAGE */}
-        <div className="relative w-full flex items-center justify-center mt-10 md:mt-0">
+        <div className="relative w-full h-[320px] md:h-[420px] flex items-center justify-center mt-10 md:mt-0">
 
           <Image
-            src={products[current].image}
-            alt={products[current].title}
-            width={420}
-            height={420}
-            sizes="(max-width: 768px) 280px, 420px"
-            className="object-contain drop-shadow-2xl"
-            priority
-          />
+  src={products[current].image}
+  alt={products[current].title}
+  fill
+  sizes="(max-width: 768px) 280px, 420px"
+  className="object-contain drop-shadow-2xl"
+/>
 
         </div>
       </div>
