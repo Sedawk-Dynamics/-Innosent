@@ -74,7 +74,7 @@ export function ProductCarousel() {
   return (
 
 
-    <section className="relative w-full h-[620px] md:h-[85vh] flex items-center overflow-hidden bg-gradient-to-r from-yellow-100 via-amber-100 to-yellow-200">
+    <section className="relative w-full h-[620px] md:h-[85vh] flex items-center overflow-hidden bg-gradient-to-r from-yellow-100 via-amber-100 to-yellow-200 pt-8">
 
       {/* ===== Circular Dotted Background ===== */}
       <div className="absolute inset-0 pointer-events-none">
