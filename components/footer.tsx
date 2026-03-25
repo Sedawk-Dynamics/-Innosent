@@ -1,7 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Separator } from "@/components/ui/separator"
-import { Facebook, Linkedin, Twitter, Youtube,Instagram  } from "lucide-react"
+import { Facebook, Linkedin, Twitter, Instagram } from "lucide-react"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -19,12 +19,6 @@ export function Footer() {
     { name: "Industries", link: "/#industries" },
     { name: "Contact", link: "/#contact" },
   ]
-
-  // const policies = [
-  //   { name: "Privacy Policy", link: "/privacy-policy" },
-  //   { name: "Terms of Service", link: "/terms" },
-  //   { name: "Cookie Policy", link: "/cookies" },
-  // ]
 
   return (
     <footer className="bg-background text-foreground border-t border-border">
@@ -97,38 +91,52 @@ export function Footer() {
             </h4>
 
             <div className="flex gap-4">
-  <Link
-    href="https://www.facebook.com/innosentindia/"
-    target="_blank"
-    className="text-muted-foreground hover:text-secondary transition-transform hover:scale-110"
-  >
-    <Facebook size={20} />
-  </Link>
 
-  <Link
-    href="https://www.linkedin.com/company/innosent-india/"
-    target="_blank"
-    className="text-muted-foreground hover:text-secondary transition-transform hover:scale-110"
-  >
-    <Linkedin size={20} />
-  </Link>
+              <a
+                href="https://www.facebook.com/innosentindia/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                title="Facebook"
+                className="text-muted-foreground hover:text-secondary transition-transform hover:scale-110"
+              >
+                <Facebook size={20} />
+              </a>
 
-  <Link
-    href="https://x.com/innosent_india"
-    target="_blank"
-    className="text-muted-foreground hover:text-secondary transition-transform hover:scale-110"
-  >
-    <Twitter size={20} />
-  </Link>
+              <a
+                href="https://www.linkedin.com/company/innosent-india/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                title="LinkedIn"
+                className="text-muted-foreground hover:text-secondary transition-transform hover:scale-110"
+              >
+                <Linkedin size={20} />
+              </a>
 
-  <Link
-    href="https://www.instagram.com/innosent_india/"
-    target="_blank"
-    className="text-muted-foreground hover:text-secondary transition-transform hover:scale-110"
-  >
-    <Instagram size={20} />
-  </Link>
-</div>
+              <a
+                href="https://x.com/innosent_india"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter"
+                title="Twitter"
+                className="text-muted-foreground hover:text-secondary transition-transform hover:scale-110"
+              >
+                <Twitter size={20} />
+              </a>
+
+              <a
+                href="https://www.instagram.com/innosent_india/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                title="Instagram"
+                className="text-muted-foreground hover:text-secondary transition-transform hover:scale-110"
+              >
+                <Instagram size={20} />
+              </a>
+
+            </div>
           </div>
         </div>
 
@@ -140,18 +148,6 @@ export function Footer() {
           <p className="text-sm text-muted-foreground">
             © {currentYear} InnoSent India Private Limited. All rights reserved.
           </p>
-
-          {/* <div className="flex flex-wrap gap-6 text-sm">
-            {policies.map((item, idx) => (
-              <Link
-                key={idx}
-                href={item.link}
-                className="text-muted-foreground hover:text-primary hover:underline transition"
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div> */}
 
         </div>
       </div>

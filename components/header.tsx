@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Menu, X, Search, Facebook, Linkedin, Twitter, Youtube ,Instagram} from 'lucide-react'
+import { Menu, X, Search, Facebook, Linkedin, Twitter, Instagram } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { InquiryModal } from '@/components/inquiry-modal'
 
@@ -37,141 +37,122 @@ export function Header() {
     { id: 'radar-tech-intro', label: 'Radar Technology' },
   ]
 
-   const socialLinks = [
+  // ✅ FIXED SOCIAL LINKS
+  const socialLinks = [
     { icon: Facebook, href: 'https://www.facebook.com/innosentindia/', label: 'Facebook' },
     { icon: Linkedin, href: 'https://www.linkedin.com/company/innosent-india/', label: 'LinkedIn' },
     { icon: Instagram, href: 'https://www.instagram.com/innosent_india/', label: 'Instagram' },
-    { icon: Twitter, href: 'https://x.com/innsosent_india', label: 'Twitter' },
+    { icon: Twitter, href: 'https://x.com/innosent_india', label: 'Twitter' },
   ]
 
-  // Handle navigation with proper anchor link support
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    // If link has an anchor and we're on products page, go to home first then scroll
     if (href.startsWith('#') && pathname !== '/') {
       e.preventDefault()
       window.location.href = `/${href}`
     }
   }
 
-  // Focus search input when it opens
   useEffect(() => {
     if (isSearchOpen && searchInputRef.current) {
       searchInputRef.current.focus()
     }
   }, [isSearchOpen])
 
-  // Handle search
   const handleSearch = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       e.preventDefault()
       const query = searchQuery.toLowerCase().trim()
-      
+
       if (!query) {
         setSearchResult('Please enter a search term')
         setTimeout(() => setSearchResult(null), 2000)
         return
       }
 
-      // Find matching section
       const match = searchableItems.find(
-        item => item.label.toLowerCase().includes(query) || item.id.toLowerCase().includes(query)
+        item =>
+          item.label.toLowerCase().includes(query) ||
+          item.id.toLowerCase().includes(query)
       )
 
       if (match) {
-        // If not on home page, navigate there first
         if (pathname !== '/') {
           window.location.href = `/#${match.id}`
         } else {
-          // Smooth scroll to section
           const element = document.getElementById(match.id)
           if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-            
-            // Reset search state after a delay
+            element.scrollIntoView({ behavior: 'smooth' })
             setTimeout(() => {
               setSearchResult(null)
               setSearchQuery('')
               setIsSearchOpen(false)
             }, 300)
           } else {
-            setSearchResult('Section not found on page')
-            setTimeout(() => setSearchResult(null), 3000)
+            setSearchResult('Section not found')
           }
         }
       } else {
-        setSearchResult(`No section found matching "${query}". Try: Products, About, Technology, Industries, Contact`)
-        setTimeout(() => setSearchResult(null), 4000)
+        setSearchResult('No matching section found')
       }
     }
   }
 
-  // Close search on Escape
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        setIsSearchOpen(false)
-      }
+      if (e.key === 'Escape') setIsSearchOpen(false)
     }
-    
     document.addEventListener('keydown', handleEscape)
     return () => document.removeEventListener('keydown', handleEscape)
   }, [])
 
   return (
     <>
-      <header className="sticky top-0 z-40 bg-background/95 backdrop-blur-md border-b border-border/50 shadow-sm animate-slide-down">
-        <nav className="max-w-7xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between gap-4">
+      <header className="sticky top-0 z-40 bg-background/95 backdrop-blur-md border-b shadow-sm">
+        <nav className="max-w-7xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
 
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0 group hover:opacity-80 transition-smooth animate-logo-pop-in">
+          <Link href="/">
             <Image
               src="/innosent-logo.png"
-              alt="InnoSent Logo"
-              width={220}
+              alt="InnoSent"
+              width={200}
               height={60}
-              className="h-auto w-auto max-w-[200px] hover:opacity-80 transition-smooth"
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8 flex-1 justify-center">
-
-            {navItems.map((item, idx) => (
+          {/* Desktop Nav */}
+          <div className="hidden lg:flex gap-8">
+            {navItems.map(item => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="text-sm font-medium text-foreground/70 hover:text-primary transition-smooth relative group"
-                style={{ animationDelay: `${0.05 * idx}s` }}
+                className="text-sm hover:text-primary"
               >
                 {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-secondary to-accent group-hover:w-full transition-smooth duration-300" />
               </a>
             ))}
           </div>
 
-          {/* Right Side Actions */}
+          {/* Right */}
           <div className="hidden md:flex items-center gap-4">
 
-            {/* Search Icon */}
-            <button
-              onClick={() => setIsSearchOpen(!isSearchOpen)}
-              className="p-2 text-foreground/60 hover:text-primary hover:bg-primary/10 rounded-lg transition-smooth"
-              aria-label="Search"
-            >
+            {/* Search */}
+            <button onClick={() => setIsSearchOpen(true)}>
               <Search size={20} />
             </button>
 
-            {/* Social Links */}
-            <div className="flex items-center gap-4 border-l border-border pl-4">
-              {socialLinks.map((social, idx) => {
+            {/* Social */}
+            <div className="flex gap-3 border-l pl-4">
+              {socialLinks.map((social, i) => {
                 const Icon = social.icon
                 return (
                   <a
-                    key={idx}
+                    key={i}
                     href={social.href}
-                    aria-label={social.label}
-                    className="text-foreground/60 hover:text-secondary hover:scale-110 transition-smooth"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={social.label}
                   >
                     <Icon size={18} />
                   </a>
@@ -179,147 +160,82 @@ export function Header() {
               })}
             </div>
 
-            {/* CTA Button */}
-            <Button
-              onClick={() => setIsInquiryOpen(true)}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-md hover:shadow-lg transition-smooth"
-            >
+            <Button onClick={() => setIsInquiryOpen(true)}>
               Get Started
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu */}
           <button
+            className="md:hidden"
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 hover:bg-muted rounded-lg transition-smooth"
           >
-            {isOpen ? <X size={24} className="text-primary" /> : <Menu size={24} />}
+            {isOpen ? <X /> : <Menu />}
           </button>
         </nav>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Nav */}
         {isOpen && (
-          <div className="md:hidden bg-background/95 backdrop-blur-md border-t border-border/50 animate-slide-down">
-            <div className="px-4 py-4 space-y-2">
-
-              {/* Mobile Search */}
-              <div className="mb-4">
-                <input
-                  type="text"
-                  placeholder="Search sections..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  onKeyDown={handleSearch}
-                  className="w-full px-4 py-2 bg-muted border border-border rounded-lg text-sm text-foreground placeholder:text-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-smooth"
-                />
-                {searchResult && (
-                  <div className="mt-2 text-xs text-foreground/70 px-2 animate-fade-in-up">
-                    {searchResult}
-                  </div>
-                )}
-              </div>
-
-              {navItems.map((item, idx) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  onClick={(e) => handleNavClick(e, item.href)}
-                  className="block text-sm font-medium text-foreground/70 hover:text-primary hover:bg-primary/5 py-3 px-3 rounded-lg transition-smooth"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.label}
-                </a>
-              ))}
-
-              {/* Mobile Social Icons */}
-              <div className="flex justify-center gap-6 pt-4 border-t border-border mt-4">
-                {socialLinks.map((social, idx) => {
-                  const Icon = social.icon
-                  return (
-                    <a
-                      key={idx}
-                      href={social.href}
-                      aria-label={social.label}
-                      className="text-foreground/60 hover:text-secondary hover:scale-110 transition-smooth"
-                    >
-                      <Icon size={20} />
-                    </a>
-                  )
-                })}
-              </div>
-
-              <Button
-                onClick={() => {
-                  setIsInquiryOpen(true)
+          <div className="md:hidden p-4 space-y-3">
+            {navItems.map(item => (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={(e) => {
+                  handleNavClick(e, item.href)
                   setIsOpen(false)
                 }}
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground mt-6 shadow-md transition-smooth"
+                className="block"
               >
-                Get Started
-              </Button>
+                {item.label}
+              </a>
+            ))}
 
+            <div className="flex justify-center gap-5 pt-4">
+              {socialLinks.map((social, i) => {
+                const Icon = social.icon
+                return (
+                  <a
+                    key={i}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Icon size={20} />
+                  </a>
+                )
+              })}
             </div>
+
+            <Button
+              className="w-full mt-4"
+              onClick={() => {
+                setIsInquiryOpen(true)
+                setIsOpen(false)
+              }}
+            >
+              Get Started
+            </Button>
           </div>
         )}
       </header>
 
       {/* Search Modal */}
       {isSearchOpen && (
-        <div 
-          className="fixed inset-0 bg-black/30 backdrop-blur-sm z-30 animate-fade-in-up"
+        <div
+          className="fixed inset-0 bg-black/40 flex justify-center pt-20"
           onClick={() => setIsSearchOpen(false)}
         >
-          <div 
-            className="max-w-2xl mx-auto mt-20 px-4 animate-fade-in-up"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="bg-background rounded-lg shadow-2xl border border-border/50 overflow-hidden">
-              <div className="relative">
-                <Search className="absolute left-4 top-4 text-foreground/40" size={20} />
-                <input
-                  ref={searchInputRef}
-                  type="text"
-                  placeholder="Search products, sections, technology..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  onKeyDown={handleSearch}
-                  className="w-full pl-12 pr-4 py-4 text-lg bg-background text-foreground placeholder:text-foreground/40 focus:outline-none border-b border-border/30"
-                />
-              </div>
-
-              {searchResult && (
-                <div className="px-4 py-3 text-sm text-foreground/70 border-b border-border/30 bg-muted/50">
-                  {searchResult}
-                </div>
-              )}
-
-              {/* Search Suggestions */}
-              <div className="max-h-96 overflow-y-auto">
-                {!searchQuery && (
-                  <div className="p-6 text-center">
-                    <p className="text-sm text-foreground/60 mb-4">Popular searches:</p>
-                    <div className="flex flex-wrap gap-2 justify-center">
-                      {['Products', 'Technology', 'Industries', 'About', 'Contact'].map((item) => (
-                        <button
-                          key={item}
-                          onClick={() => {
-                            const match = searchableItems.find((s) =>
-                              s.label.toLowerCase().includes(item.toLowerCase())
-                            )
-                            if (match) {
-                              window.location.href = `/#${match.id}`
-                            }
-                          }}
-                          className="px-3 py-1 text-sm bg-primary/10 hover:bg-primary/20 text-primary rounded-full transition-smooth"
-                        >
-                          {item}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
+          <div onClick={(e) => e.stopPropagation()}>
+            <input
+              ref={searchInputRef}
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              onKeyDown={handleSearch}
+              placeholder="Search..."
+              className="p-3 w-[400px] border rounded"
+            />
+            {searchResult && <p>{searchResult}</p>}
           </div>
         </div>
       )}
