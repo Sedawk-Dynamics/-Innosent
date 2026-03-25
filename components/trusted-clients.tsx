@@ -13,10 +13,10 @@ const clients = [
   { id: 5, name: 'IIT Roorkee', logo: '/supporter/iit-roorkee.png' },
   { id: 6, name: 'Indian Institute of Astrophysics', logo: '/supporter/Indian-institute-of-astro.png' },
   { id: 7, name: 'ISRO', logo: '/supporter/isro.png' },
-  { id: 8, name: 'Qualix', logo: '/supporter/Qualix.png' },
+  { id: 8, name: 'Qualix', logo: '/trust/qualix.jpeg' },
   { id: 9, name: 'Superwave', logo: '/supporter/SUPERWAVE.png' },
   { id: 10, name: 'Tata Motors', logo: '/supporter/tata-motors.png' },
-  { id: 11, name: 'Trafficool', logo: '/supporter/trafficsol.png' },
+  { id: 11, name: 'Trafficool', logo: '/trust/traficsol.jpeg' },
   { id: 12, name: 'Vaan', logo: '/supporter/Vaaan.png' },
 ]
 

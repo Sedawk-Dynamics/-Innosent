@@ -1,7 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Separator } from "@/components/ui/separator"
-import { Facebook, Linkedin, Twitter, Youtube } from "lucide-react"
+import { Facebook, Linkedin, Twitter, Youtube,Instagram  } from "lucide-react"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -20,11 +20,11 @@ export function Footer() {
     { name: "Contact", link: "/#contact" },
   ]
 
-  const policies = [
-    { name: "Privacy Policy", link: "/privacy-policy" },
-    { name: "Terms of Service", link: "/terms" },
-    { name: "Cookie Policy", link: "/cookies" },
-  ]
+  // const policies = [
+  //   { name: "Privacy Policy", link: "/privacy-policy" },
+  //   { name: "Terms of Service", link: "/terms" },
+  //   { name: "Cookie Policy", link: "/cookies" },
+  // ]
 
   return (
     <footer className="bg-background text-foreground border-t border-border">
@@ -97,34 +97,38 @@ export function Footer() {
             </h4>
 
             <div className="flex gap-4">
-              <Link
-                href="#"
-                className="text-muted-foreground hover:text-secondary transition-transform hover:scale-110"
-              >
-                <Facebook size={20} />
-              </Link>
+  <Link
+    href="https://www.facebook.com/innosentindia/"
+    target="_blank"
+    className="text-muted-foreground hover:text-secondary transition-transform hover:scale-110"
+  >
+    <Facebook size={20} />
+  </Link>
 
-              <Link
-                href="#"
-                className="text-muted-foreground hover:text-secondary transition-transform hover:scale-110"
-              >
-                <Linkedin size={20} />
-              </Link>
+  <Link
+    href="https://www.linkedin.com/company/innosent-india/"
+    target="_blank"
+    className="text-muted-foreground hover:text-secondary transition-transform hover:scale-110"
+  >
+    <Linkedin size={20} />
+  </Link>
 
-              <Link
-                href="#"
-                className="text-muted-foreground hover:text-secondary transition-transform hover:scale-110"
-              >
-                <Twitter size={20} />
-              </Link>
+  <Link
+    href="https://x.com/innosent_india"
+    target="_blank"
+    className="text-muted-foreground hover:text-secondary transition-transform hover:scale-110"
+  >
+    <Twitter size={20} />
+  </Link>
 
-              <Link
-                href="#"
-                className="text-muted-foreground hover:text-secondary transition-transform hover:scale-110"
-              >
-                <Youtube size={20} />
-              </Link>
-            </div>
+  <Link
+    href="https://www.instagram.com/innosent_india/"
+    target="_blank"
+    className="text-muted-foreground hover:text-secondary transition-transform hover:scale-110"
+  >
+    <Instagram size={20} />
+  </Link>
+</div>
           </div>
         </div>
 
@@ -137,7 +141,7 @@ export function Footer() {
             © {currentYear} InnoSent India Private Limited. All rights reserved.
           </p>
 
-          <div className="flex flex-wrap gap-6 text-sm">
+          {/* <div className="flex flex-wrap gap-6 text-sm">
             {policies.map((item, idx) => (
               <Link
                 key={idx}
@@ -147,7 +151,7 @@ export function Footer() {
                 {item.name}
               </Link>
             ))}
-          </div>
+          </div> */}
 
         </div>
       </div>

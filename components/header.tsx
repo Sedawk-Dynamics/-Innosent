@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Menu, X, Search, Facebook, Linkedin, Twitter, Youtube } from 'lucide-react'
+import { Menu, X, Search, Facebook, Linkedin, Twitter, Youtube ,Instagram} from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { InquiryModal } from '@/components/inquiry-modal'
 
@@ -37,11 +37,11 @@ export function Header() {
     { id: 'radar-tech-intro', label: 'Radar Technology' },
   ]
 
-  const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Youtube, href: '#', label: 'YouTube' },
+   const socialLinks = [
+    { icon: Facebook, href: 'https://www.facebook.com/innosentindia/', label: 'Facebook' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/company/innosent-india/', label: 'LinkedIn' },
+    { icon: Instagram, href: 'https://www.instagram.com/innosent_india/', label: 'Instagram' },
+    { icon: Twitter, href: 'https://x.com/innsosent_india', label: 'Twitter' },
   ]
 
   // Handle navigation with proper anchor link support
