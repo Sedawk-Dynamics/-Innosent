@@ -437,7 +437,7 @@ export function Contact() {
                 <p className="text-xs text-foreground/50 text-center font-medium">
                   We'll get back to you within 24 hours
                 </p>
-              </form>
+              </form>  
             </Card>
           </div>
         </div>
