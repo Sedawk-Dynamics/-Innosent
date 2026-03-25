@@ -220,7 +220,7 @@ export function Contact() {
               {
                 icon: MapPin,
                 title: 'Address',
-                items: ['982/1M, 983M Salempur Industrial Area', 'Roorkee, Haridwar'],
+                items: ['Khasra No.982/1M,983M, Salempur Rajputana Industrial Area,Roorkee. Distt.- Haridwar-247667 (U.K)'],
               },
               {
                 icon: Clock,
