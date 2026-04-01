@@ -138,9 +138,7 @@ export function Header() {
           <div className="hidden md:flex items-center gap-4">
 
             {/* Search */}
-            <button onClick={() => setIsSearchOpen(true)}>
-              <Search size={20} />
-            </button>
+           
 
             {/* Social */}
             <div className="flex gap-3 border-l pl-4">
